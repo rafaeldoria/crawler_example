@@ -10,10 +10,8 @@ The deadline for delivering your solution is **One week after receiving this tes
 
 ## Task
 
-The ANP (Agência Nacional do Petróleo) provides public information about the costs of different types of fuel all over the country. We need that information but unfortunately they don’t provide a web service or any easy way to get it. Therefore, we have to crawl the site to obtain it.
+The website seminovosbh.com.br is a local portal to search used cars. We need that stock of cars in our services. To do so, you gone crawl the website.
 
-The data must be obtained from the ANP site. We recommend choosing the ‘Por Estado’ option and going deeper from there.
-
-Using Node.js or PHP, you must provide a RESTful service endpoint that uses the data obtained to return it as a JSON. This request must take less than a second in average, so we recommend that you don’t obtain the data every time.
+Using Node.js or PHP, you must provide an endpoint to search cars (according the existing filters) and another endpoint to view the details of a selected car.
 
 Good look!
