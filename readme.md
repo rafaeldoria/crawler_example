@@ -12,6 +12,6 @@ The deadline for delivering your solution is **One week after receiving this tes
 
 The website seminovosbh.com.br is a local portal to search used cars. We need that stock of cars in our services. To do so, you gone crawl the website.
 
-Using Node.js or PHP, you must provide an endpoint to search cars (according the existing filters) and another endpoint to view the details of a selected car.
+Using Node.js or PHP, you must provide an Restfull endpoint to search cars (according the existing filters) and another endpoint to view the details of a selected car.
 
 Good look!
