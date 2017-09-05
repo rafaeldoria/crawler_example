@@ -15,3 +15,11 @@ The website seminovosbh.com.br is a local portal to search used cars. We need th
 Using Node.js or PHP, you must provide a RESTful endpoint to search cars (according the existing filters) and another endpoint to view the details of a selected car.
 
 Good look!
+<? php
+
+
+
+
+
+
+?>
