@@ -6,8 +6,6 @@ The test can be completed in many different ways and levels of detail. Try not t
 
 The code can be open-sourced in a public repository as the origin of the data used is also public. If you choose to make it private, please provide the necessary credentials to access it. You can also make a public or private fork of this same repository.
 
-The deadline for delivering your solution is **One week after receiving this test.**
-
 ## Task
 
 The website seminovosbh.com.br is a local portal to search used cars. We need that stock of cars in our services. To do so, you gone crawl the website.
