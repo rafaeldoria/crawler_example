@@ -1,3 +1,4 @@
 module.exports = (app) => {
-    app.use('/', require('./routes/home'))
+    app.use('/home', require('./routes/home'))
+    app.use('/', require('./routes/crawler'))
 }
