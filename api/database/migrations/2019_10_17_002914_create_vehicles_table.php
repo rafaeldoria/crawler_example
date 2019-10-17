@@ -18,8 +18,8 @@ class CreateVehiclesTable extends Migration
             $table->string('title');
             $table->string('subtitle');
             $table->string('year');
-            $table->string('km');
-            $table->string('price');
+            $table->decimal('km',10, 3);
+            $table->decimal('price',10, 3);
             $table->string('link');
             $table->timestamps();
         });

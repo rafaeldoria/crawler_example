@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
     let max_price = req.body.max_price
 
     let url = 'https://seminovos.com.br/' + type + '/' + mark + '/' + name + '/ano-' + init_year + '-' + end_year + '/preco-' + min_price + '-' + max_price
-    
+    let urlApi = 'http://localhost:8000/api/v1/vehicles'
     request(url, (err, response, body) => {
         if (err || response.statusCode != 200) {
             return;
@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
 
         $('.card-content').each((key, element) => {
             let elementTitle = $(element).find('.card-heading > .card-title').text()
-            let elementprice = $(element).find('.card-heading > .card-price').text()
+            let elementPrice = $(element).find('.card-heading > .card-price').text()
             let elementSubtitle = ($(element).find('.card-info > .card-features > .card-subtitle').text()).substring(9)
             let elementYear = ($(element).find('.card-info > .card-features > .list-features > li[title|="Ano de fabricação"]').text()).substring(2)
             let elementKm = (($(element).find('.card-info > .card-features > .list-features > li[title|="Kilometragem atual"]').text()).substring(2)).slice(0, -1)
@@ -44,18 +44,32 @@ router.post('/', (req, res) => {
 
             data.push({
                 elementTitle,
-                elementprice,
+                elementPrice,
                 elementSubtitle,
                 elementYear,
                 elementKm,
                 elementLink
             })
         })
+        
+        request.post({
+            headers: {'Content-type' : 'application/x-www-form-urlencoded'},
+            url: urlApi,
+            form: JSON.stringify(data)
+        }, (error, res, body) => {
+            if (error) {
+                console.error(error)
+                return
+            }
+            console.log(`statusCode: ${res.statusCode}`)
+            console.log(body)
+        })
 
-        res.status(200).json(data)
+        // res.status(200).json(res)
     })
 
     
 })
 
 module.exports = router
+

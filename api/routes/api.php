@@ -20,3 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::prefix('v1')->group(function () {
     Route::resource('vehicles', 'VehicleController');
 });
+
+Route::prefix('v1')->group(function () {
+    Route::post('/filters', 'VehicleController@filters');
+});
