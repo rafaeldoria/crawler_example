@@ -1,0 +1,25 @@
+{
+  "name": "backend-challenge",
+  "version": "1.0.0",
+  "description": "Challenge backend ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://rafaeldoria@bitbucket.org/alpesoneprojetosespeciais/backend-challenge.git"
+  },
+  "author": "Rafael Dória",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/alpesoneprojetosespeciais/backend-challenge#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "express-hbs": "^2.1.2",
+    "express-session": "^1.17.0",
+    "morgan": "^1.9.1",
+    "request": "^2.88.0"
+  }
+}
