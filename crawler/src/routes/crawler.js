@@ -17,15 +17,16 @@ router.post('/', (req, res) => {
 
     let type = req.body.type
     let mark = req.body.mark
-    let name = req.body.uno
+    let model = req.body.model
     let init_year = req.body.init_year
     let end_year = req.body.end_year
     let min_price = req.body.min_price
     let max_price = req.body.max_price
 
-    let url = 'https://seminovos.com.br/' + type + '/' + mark + '/' + name + '/ano-' + init_year + '-' + end_year + '/preco-' + min_price + '-' + max_price
+    let urlSearch = 'https://seminovos.com.br/' + type + '/' + mark + '/' + model + '/ano-' + init_year + '-' + end_year + '/preco-' + min_price + '-' + max_price + '?ordenarPor=2&registrosPagina=50'
     let urlApi = 'http://localhost:8000/api/v1/vehicles'
-    request(url, (err, response, body) => {
+
+    request(urlSearch, (err, response, body) => {
         if (err || response.statusCode != 200) {
             return;
         }
@@ -51,6 +52,10 @@ router.post('/', (req, res) => {
                 elementLink
             })
         })
+
+        if (!data.length) {
+            return res.redirect('/')
+        }
         
         request.post({
             headers: {'Content-type' : 'application/x-www-form-urlencoded'},
@@ -59,16 +64,11 @@ router.post('/', (req, res) => {
         }, (error, res, body) => {
             if (error) {
                 console.error(error)
-                return
             }
-            console.log(`statusCode: ${res.statusCode}`)
-            console.log(body)
         })
 
-        // res.status(200).json(res)
+        return res.redirect('/')
     })
-
-    
 })
 
 module.exports = router
