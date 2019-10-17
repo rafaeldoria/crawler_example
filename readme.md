@@ -1,4 +1,4 @@
-#Backend Test
+## Backend Test
 
 ## Crawler get data
 Acessar diretório crawler  
@@ -6,16 +6,16 @@ executar npm install
 Após node index.js  
 
 ## API 
-Acessar diretório API
-Configurar .env com dados do Banco Mysql
-composer install
-php artisan migrate
-php artisan serve
+Acessar diretório API  
+Configurar .env com dados do Banco Mysql  
+composer install  
+php artisan migrate  
+php artisan serve  
 
 ### Pesquisa
-Acessar servidor na porta 3000
-Realizar busca por filtros
-O mesmo irá realizar o crawler no site e salvar os dados encontrados
+Acessar servidor na porta 3000  
+Realizar busca por filtros  
+O mesmo irá realizar o crawler no site e salvar os dados encontrados  
 
 ### API Postman
 
